@@ -432,7 +432,6 @@ GameObject:
   - component: {fileID: 1807836581}
   - component: {fileID: 1807836580}
   - component: {fileID: 1807836579}
-  - component: {fileID: 1807836578}
   m_Layer: 0
   m_Name: CollectGarbage
   m_TagString: Untagged
@@ -440,18 +439,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1807836578
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1807836577}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68c182051d8da3448ad742f5584d0e72, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1807836579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -570,11 +557,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberPrefabs:
-  - {fileID: 6593852199428832306, guid: de80895e454a22442b0ae49caa1555ee, type: 3}
-  - {fileID: 6491684279925630063, guid: fef294c58a0d0da488f60d503fdc8137, type: 3}
+  - {fileID: 3980310913791537021, guid: 44599dec3321fa44ba7e32942f2db381, type: 3}
+  - {fileID: 7612721835666289344, guid: a2ecac240e407b144aa9b60e8921b1aa, type: 3}
+  - {fileID: 1594968825658797823, guid: 1b291b3ac79c9cc45b78675f7715bb22, type: 3}
   letterPrefabs:
-  - {fileID: 2524504680174153593, guid: c29c345b2b9986e4f95a071c65170f97, type: 3}
-  - {fileID: 7171173370111414381, guid: 19854d443deee3d45b324d479e09ffda, type: 3}
+  - {fileID: 8684716452362274540, guid: 6d1a8310a6c80784f9873b890a239aec, type: 3}
+  - {fileID: 2163198855945221040, guid: 213eeeb9e22b00d42b6bcb3f3cc78b30, type: 3}
+  - {fileID: 3105728631340211720, guid: 5ee3a769273d3fd4fbdec594887b24a4, type: 3}
   spawnArea: {fileID: 1258116276}
   spawnInterval: 0.85
 --- !u!1 &2022392949

@@ -13,11 +13,6 @@ public class Spawn : MonoBehaviour
 
     void Start()
     {
-        // Pegando os limites do spawnArea
-        //float halfWidth = spawnArea.localScale.x / 2; // Metade da largura do elemento
-        //spawnAreaMinX = spawnArea.position.x - halfWidth;
-        //spawnAreaMaxX = spawnArea.position.x + halfWidth;
-
         Collider2D spawnAreaCollider = spawnArea.GetComponent<Collider2D>();
         // Calculando os limites esquerdo e direito da área de spawn com base na posição e escala
         spawnAreaMinX = spawnArea.position.x - spawnAreaCollider.bounds.size.x / 2;

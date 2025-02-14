@@ -7,7 +7,6 @@ public class CollectGarbage : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.tag == "Collectible") {
-            Debug.Log(collision.gameObject.GetComponent<TextMeshPro>().text);
             Destroy(collision.gameObject);
         }
     }

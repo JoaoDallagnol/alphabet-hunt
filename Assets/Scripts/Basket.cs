@@ -10,7 +10,6 @@ public class Basket : MonoBehaviour
     }
     
     void Move() {
-        
         Vector3 movement = new(Input.GetAxis("Horizontal"), 0f, 0f);
         transform.position += movement * Time.deltaTime * Speed;
     }
@@ -22,7 +21,7 @@ public class Basket : MonoBehaviour
             string collectible = collision.gameObject.GetComponent<TextMeshPro>().text;
 
             if (char.IsDigit(collectible[0])) {
-                Debug.Log("É NUMERO ----");
+                GameController.instance.GameOver();
             } else {
                 Debug.Log("É Letra +++++");
             }

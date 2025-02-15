@@ -15,6 +15,7 @@ public class GameController : MonoBehaviour {
     }
 
     public void RestartGame(string sceneName) {
+        Time.timeScale = 1;
         SceneManager.LoadScene(sceneName);
     }
 }

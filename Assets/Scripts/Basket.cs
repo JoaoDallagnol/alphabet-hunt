@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 
@@ -23,7 +25,20 @@ public class Basket : MonoBehaviour
             if (char.IsDigit(collectible[0])) {
                 GameController.instance.GameOver();
             } else {
-                Debug.Log("É Letra +++++");
+                List<GameObject> alphabetList = Spawn.instance.alphabet.ToList();
+
+                string firstLetterText = alphabetList[0].GetComponent<TextMeshPro>().text;
+
+                if (collectible == firstLetterText) {
+                    alphabetList.RemoveAt(0);
+                    if (alphabetList.Count == 0) {
+                        //TODO TELA DE WIN
+                        GameController.instance.GameOver();
+                    }
+                    Spawn.instance.alphabet = alphabetList.ToArray();
+                } else {
+                    GameController.instance.GameOver();
+                }
             }
         }
     }

@@ -1567,6 +1567,9 @@ MonoBehaviour:
   - {fileID: 8684716452362274540, guid: 6d1a8310a6c80784f9873b890a239aec, type: 3}
   - {fileID: 2163198855945221040, guid: 213eeeb9e22b00d42b6bcb3f3cc78b30, type: 3}
   - {fileID: 3105728631340211720, guid: 5ee3a769273d3fd4fbdec594887b24a4, type: 3}
+  - {fileID: 427931043087879053, guid: e9c64586a688dc8499c69bb1f0859b2b, type: 3}
+  - {fileID: 3222608553625097449, guid: 9638b81072492cd4ca3fc45b0a624df8, type: 3}
+  - {fileID: 2852661209745795259, guid: 2d2d6b5a223ddbc45a0e74edf8285db5, type: 3}
   spawnArea: {fileID: 1258116276}
   spawnInterval: 0.85
 --- !u!1 &2022392949

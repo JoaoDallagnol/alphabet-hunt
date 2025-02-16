@@ -1,10 +1,13 @@
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 
 public class Spawn : MonoBehaviour
 {
-    public GameObject[] numberPrefabs;  // Array de números (prefabs com imagens de números)
-    public GameObject[] letterPrefabs;  // Array de letras (prefabs com imagens de letras)
+    public static Spawn instance;
+    private GameObject[] alphabetFiltered;
+    public GameObject[] numberList;  // Array de números (prefabs com imagens de números)
+    public GameObject[] alphabet;  // Array de letras (prefabs com imagens de letras)
     public Transform spawnArea;
     public float spawnInterval;  // Tempo entre os spawns
     private float spawnAreaMinX; // Ponto mínimo da largura
@@ -13,6 +16,7 @@ public class Spawn : MonoBehaviour
 
     void Start()
     {
+        instance = this;
         Collider2D spawnAreaCollider = spawnArea.GetComponent<Collider2D>();
         // Calculando os limites esquerdo e direito da área de spawn com base na posição e escala
         spawnAreaMinX = spawnArea.position.x - spawnAreaCollider.bounds.size.x / 2;
@@ -39,14 +43,19 @@ public class Spawn : MonoBehaviour
         if (randomChoice == 0)
         {
             // Escolher aleatoriamente um número do array
-            int randomIndex = Random.Range(0, numberPrefabs.Length);
-            selectedPrefab = numberPrefabs[randomIndex];
+            int randomIndex = Random.Range(0, numberList.Length);
+            selectedPrefab = numberList[randomIndex];
         }
         else
         {
+            // Filtra a lista do Alfabeto para as proximas 3 letras somente
+            if (alphabet.Length >= 3) {
+                alphabetFiltered = alphabet.Take(3).ToArray();
+            }
+
             // Escolher aleatoriamente uma letra do array
-            int randomIndex = Random.Range(0, letterPrefabs.Length);
-            selectedPrefab = letterPrefabs[randomIndex];
+            int randomIndex = Random.Range(0, alphabetFiltered.Length);
+            selectedPrefab = alphabetFiltered[randomIndex];
         }
 
         // Gerar uma posição aleatória na área de spawn usando os limites calculados

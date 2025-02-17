@@ -13,9 +13,7 @@ public class Basket : MonoBehaviour
     void Start() {
         SpriteRenderer bgRenderer = Background.GetComponent<SpriteRenderer>();
 
-        float halfWidth = bgRenderer.bounds.size.x / 2; // Usa o tamanho real da imagem
-        // leftLimit = Background.position.x - halfWidth + (transform.localScale.x / 2);
-        // rightLimit = Background.position.x + halfWidth - (transform.localScale.x / 2);
+        float halfWidth = bgRenderer.bounds.size.x / 2;
         leftLimit = Background.position.x - halfWidth + (transform.localScale.x / 4);
         rightLimit = Background.position.x + halfWidth - (transform.localScale.x / 4);
     }
@@ -24,13 +22,9 @@ public class Basket : MonoBehaviour
     }
     
     void Move() {
-        // Vector3 movement = new(Input.GetAxis("Horizontal"), 0f, 0f);
-        // transform.position += movement * Time.deltaTime * Speed;
-    
         Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
         transform.position += movement * Time.deltaTime * Speed;
 
-        // Restringe a posição dentro dos limites do background
         transform.position = new Vector3(
             Mathf.Clamp(transform.position.x, leftLimit, rightLimit),
             transform.position.y,

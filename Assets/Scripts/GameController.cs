@@ -2,10 +2,12 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
 
     public GameObject gameOver;
+    public GameObject gameEnd;
     public static GameController instance;
     public TextMeshProUGUI alphabetText1;
     public TextMeshProUGUI alphabetText2;
@@ -14,6 +16,9 @@ public class GameController : MonoBehaviour {
     private Color defaultColor = Color.gray;
     private Color highlightColor = Color.white;
     private HashSet<string> collectedLetters = new HashSet<string>();
+    public bool isHard;
+    private int totalScore;
+    public Text scoreText;
     void Start() {
         instance = this;
         UpdateAlphabetUI("");
@@ -36,6 +41,11 @@ public class GameController : MonoBehaviour {
         alphabetText2.text = GetFormattedText(secondHalf, collectedLetter);
     }
 
+    public void GameEnd() {
+        gameEnd.SetActive(true);
+        Time.timeScale = 0;
+    }
+
     private string GetFormattedText(string text, string collectedLetter)
     {
         string newText = "";
@@ -53,5 +63,25 @@ public class GameController : MonoBehaviour {
         }
 
         return newText;
+    }
+
+    public void AddScore() {
+        if (isHard) {
+            totalScore += 2;
+        } else {
+            totalScore += 1;
+        }
+    }
+
+    public void DecreaseScore() {
+        if (isHard) {
+            totalScore -= 2;
+        } else {
+            totalScore -= 1;  
+        }
+    }
+
+    public void UpdateScore () {
+        scoreText.text = totalScore.ToString();
     }
 }

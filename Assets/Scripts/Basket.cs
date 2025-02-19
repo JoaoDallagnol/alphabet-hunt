@@ -48,10 +48,11 @@ public class Basket : MonoBehaviour
                 if (collectible == firstLetterText) {
                     alphabetList.RemoveAt(0);
                     GameController.instance.UpdateAlphabetUI(collectible);
+                    GameController.instance.AddScore();
+                    GameController.instance.UpdateScore();
 
                     if (alphabetList.Count == 0) {
-                        //TODO TELA DE WIN
-                        GameController.instance.GameOver();
+                        GameController.instance.GameEnd();
                     }
                     Spawn.instance.alphabet = alphabetList.ToArray();
                 } else {

@@ -23,21 +23,26 @@ public class GameController : MonoBehaviour {
     void Start() {
         instance = this;
         UpdateAlphabetUI("");
-        // if (PlayerPrefs.HasKey("isHard")) {
-        //     isHard = PlayerPrefs.GetInt("isHard") == 1;
-        //     // Atualiza visualmente o botão conforme o valor de isHard
-        //     Color newColor;
-        //     if (isHard) {
-        //         ColorUtility.TryParseHtmlString("#B9000A", out newColor);
-        //         difficultyButton.image.color = newColor;
-        //         difficultyButton.GetComponentInChildren<TextMeshProUGUI>().text = "Difficult: HARD";
-        //     }
-        //     else {
-        //         ColorUtility.TryParseHtmlString("#0EB03E", out newColor);
-        //         difficultyButton.image.color = newColor;
-        //         difficultyButton.GetComponentInChildren<TextMeshProUGUI>().text = "Difficult: EASY";
-        //     }
-        // }
+    }
+
+    void OnEnable() {
+        UpdateDifficultyUI();
+    }
+
+    void UpdateDifficultyUI() {
+        if (PlayerPrefs.HasKey("isHard")) {
+            isHard = PlayerPrefs.GetInt("isHard") == 1;
+            Color newColor;
+            if (isHard) {
+                ColorUtility.TryParseHtmlString("#B9000A", out newColor);
+                difficultyButton.image.color = newColor;
+                difficultyButton.GetComponentInChildren<TextMeshProUGUI>().text = "Difficult: HARD";
+            } else {
+                ColorUtility.TryParseHtmlString("#0EB03E", out newColor);
+                difficultyButton.image.color = newColor;
+                difficultyButton.GetComponentInChildren<TextMeshProUGUI>().text = "Difficult: EASY";
+            }
+        }
     }
 
     public void GameOver() {
@@ -105,16 +110,6 @@ public class GameController : MonoBehaviour {
         isHard = !isHard;
         PlayerPrefs.SetInt("isHard", isHard ? 1 : 0);
         PlayerPrefs.Save();
-        Color newColor;
-
-        if (isHard) {
-            ColorUtility.TryParseHtmlString("#B9000A", out newColor);
-            difficultyButton.image.color = newColor;
-            difficultyButton.GetComponentInChildren<TextMeshProUGUI>().text = "Difficult: HARD";
-        } else {
-            ColorUtility.TryParseHtmlString("#0EB03E", out newColor);
-            difficultyButton.image.color = newColor;
-            difficultyButton.GetComponentInChildren<TextMeshProUGUI>().text = "Difficult: EASY";
-        }
+        UpdateDifficultyUI();
     }
 }

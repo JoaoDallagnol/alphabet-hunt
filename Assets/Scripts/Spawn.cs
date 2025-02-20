@@ -13,6 +13,7 @@ public class Spawn : MonoBehaviour
     private float spawnAreaMinX; // Ponto mínimo da largura
     private float spawnAreaMaxX; // Ponto máximo da largura
     private float lastSpawnX = Mathf.NegativeInfinity;
+    private int dropRate = 0;
 
     void Start()
     {
@@ -55,7 +56,14 @@ public class Spawn : MonoBehaviour
 
             // Escolher aleatoriamente uma letra do array
             int randomIndex = Random.Range(0, alphabetFiltered.Length);
-            selectedPrefab = alphabetFiltered[randomIndex];
+            
+            if (dropRate == 4) {
+                selectedPrefab = alphabetFiltered[0];
+                dropRate = 0;
+            } else {
+                selectedPrefab = alphabetFiltered[randomIndex];
+                dropRate += 1;
+            }
         }
 
         // Gerar uma posição aleatória na área de spawn usando os limites calculados

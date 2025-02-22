@@ -9,6 +9,7 @@ public class Basket : MonoBehaviour
     public Transform Background;
     private float leftLimit;
     private float rightLimit;
+    [SerializeField] private AudioClip collectedSound;
 
     void Start() {
         SpriteRenderer bgRenderer = Background.GetComponent<SpriteRenderer>();
@@ -47,6 +48,7 @@ public class Basket : MonoBehaviour
 
                 if (collectible == firstLetterText) {
                     alphabetList.RemoveAt(0);
+                    SoundFXManager.instance.PlaySoundFXClip(collectedSound, transform, 1f);
                     GameController.instance.UpdateAlphabetUI(collectible);
                     GameController.instance.AddScore();
                     GameController.instance.UpdateScore();

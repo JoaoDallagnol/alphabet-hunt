@@ -20,6 +20,9 @@ public class GameController : MonoBehaviour {
     private bool isHard;
     private int totalScore;
     public Text scoreText;
+    [SerializeField] private AudioClip winSound;
+    [SerializeField] private AudioClip loseSound;
+
     void Start() {
         instance = this;
         UpdateAlphabetUI("");
@@ -48,6 +51,7 @@ public class GameController : MonoBehaviour {
     public void GameOver() {
         gameOver.SetActive(true);
         Time.timeScale = 0;
+        SoundFXManager.instance.PlaySoundFXClip(loseSound, transform, 1f);
     }
 
     public void RestartGame(string sceneName) {
@@ -65,6 +69,7 @@ public class GameController : MonoBehaviour {
     public void GameEnd() {
         gameEnd.SetActive(true);
         Time.timeScale = 0;
+        SoundFXManager.instance.PlaySoundFXClip(winSound, transform, 1f);
     }
 
     private string GetFormattedText(string text, string collectedLetter)

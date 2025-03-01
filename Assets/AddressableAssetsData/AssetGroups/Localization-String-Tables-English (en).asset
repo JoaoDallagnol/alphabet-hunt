@@ -15,8 +15,21 @@ MonoBehaviour:
   m_GroupName: Localization-String-Tables-English (en)
   m_GUID: 2f9b6feb09315f644abfa1b44ecbb1f3
   m_SerializeEntries:
+  - m_GUID: 038389d02cf8ee5409d53ada546cf681
+    m_Address: WinScreen_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 065f00ddf6a91bd44a896d4ecca8d3ef
-    m_Address: MenuTextTittle_en
+    m_Address: MainMenu_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 61d58f7e474a22f45bb6a9778f5d03f5
+    m_Address: GameOverScreen_en
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en

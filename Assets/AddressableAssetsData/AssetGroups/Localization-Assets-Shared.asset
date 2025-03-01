@@ -15,6 +15,16 @@ MonoBehaviour:
   m_GroupName: Localization-Assets-Shared
   m_GUID: 528754742d367f54ca68a10056399abe
   m_SerializeEntries:
+  - m_GUID: 63ee8cc0d0aab9b498e1ff8c45f6ac33
+    m_Address: Assets/LocalSettings/Tables/WinScreen Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 996ca911c1535344b9bb579427425633
+    m_Address: Assets/LocalSettings/Tables/GameOverScreen Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c79782f0e8ffcf44d9e68b0fb5b0ab4d
     m_Address: Assets/LocalSettings/Tables/MenuTextTittle Shared Data.asset
     m_ReadOnly: 1

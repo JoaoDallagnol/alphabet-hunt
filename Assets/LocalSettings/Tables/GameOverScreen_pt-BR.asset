@@ -10,16 +10,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
-  m_Name: MenuTextTittle_en
+  m_Name: GameOverScreen_pt-BR
   m_EditorClassIdentifier: 
   m_LocaleId:
-    m_Code: en
-  m_SharedData: {fileID: 11400000, guid: c79782f0e8ffcf44d9e68b0fb5b0ab4d, type: 2}
+    m_Code: pt-BR
+  m_SharedData: {fileID: 11400000, guid: 996ca911c1535344b9bb579427425633, type: 2}
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 163056545792
-    m_Localized: START GAME
+  - m_Id: 49986498560
+    m_Localized: FIM DE JOGO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 566213046272
+    m_Localized: 'Voce falhou em coletar todas as letras do
+
+      alfabeto'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 776137961472
+    m_Localized: Reiniciar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863266238464
+    m_Localized: MENU
     m_Metadata:
       m_Items: []
   references:

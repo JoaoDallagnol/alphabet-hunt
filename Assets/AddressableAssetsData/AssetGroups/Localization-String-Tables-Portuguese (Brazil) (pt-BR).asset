@@ -16,7 +16,20 @@ MonoBehaviour:
   m_GUID: 944964c689ab1e34e92b2007f046e55a
   m_SerializeEntries:
   - m_GUID: 4718011f1e03013489bbebf31832de9b
-    m_Address: MenuTextTittle_pt-BR
+    m_Address: MainMenu_pt-BR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pt-BR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d5c85061a9d55ff41a3a9ad44494d587
+    m_Address: WinScreen_pt-BR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pt-BR
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d6dce0313bd455545867c109d3f3e10d
+    m_Address: GameOverScreen_pt-BR
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-pt-BR

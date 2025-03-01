@@ -10,23 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
-  m_Name: MenuTextTittle Shared Data
+  m_Name: WinScreen Shared Data
   m_EditorClassIdentifier: 
-  m_TableCollectionName: MenuTextTittle
-  m_TableCollectionNameGuidString: c79782f0e8ffcf44d9e68b0fb5b0ab4d
+  m_TableCollectionName: WinScreen
+  m_TableCollectionNameGuidString: 63ee8cc0d0aab9b498e1ff8c45f6ac33
   m_Entries:
-  - m_Id: 163056545792
-    m_Key: menuTittle
+  - m_Id: 82177781760
+    m_Key: WinTittle
     m_Metadata:
       m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
-    rid: 169207795580666072
+    rid: 3382881741485113441
   references:
     version: 2
     RefIds:
-    - rid: 169207795580666072
+    - rid: 3382881741485113441
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
-        m_CustomEpoch: 1740772058808
+        m_CustomEpoch: 1740789973267

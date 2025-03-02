@@ -16,7 +16,8 @@ MonoBehaviour:
     m_Code: pt-BR
   m_SharedData: {fileID: 11400000, guid: c79782f0e8ffcf44d9e68b0fb5b0ab4d, type: 2}
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 3382881765333139552
   m_TableData:
   - m_Id: 163056545792
     m_Localized: INICIAR JOGO
@@ -58,6 +59,21 @@ MonoBehaviour:
     m_Localized: Portugues
     m_Metadata:
       m_Items: []
+  - m_Id: 445919128489984
+    m_Localized: 'Pontos:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 446607069843456
+    m_Localized: 'Dificuldade: {0}'
+    m_Metadata:
+      m_Items:
+      - rid: 3382881765333139552
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 3382881765333139552
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 
+        m_SharedEntries:
+        - id: 446607069843456

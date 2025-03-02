@@ -47,16 +47,20 @@ MonoBehaviour:
     m_Key: start_Button
     m_Metadata:
       m_Items: []
-  - m_Id: 68477703254016
-    m_Key: difficult_Button
-    m_Metadata:
-      m_Items: []
   - m_Id: 68551996960768
     m_Key: language_EngButton
     m_Metadata:
       m_Items: []
   - m_Id: 68684553744384
     m_Key: language_PtButton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 445919128489984
+    m_Key: score
+    m_Metadata:
+      m_Items: []
+  - m_Id: 446607069843456
+    m_Key: difficult_Butto
     m_Metadata:
       m_Items: []
   m_Metadata:

@@ -3,6 +3,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
 
 public class GameController : MonoBehaviour {
 
@@ -22,30 +24,52 @@ public class GameController : MonoBehaviour {
     public Text scoreText;
     [SerializeField] private AudioClip winSound;
     [SerializeField] private AudioClip loseSound;
+    public LocalizedString difficultyLocalizedString;
 
     void Start() {
         instance = this;
+        difficultyLocalizedString.StringChanged += OnDifficultyStringChanged;
+        UpdateDifficultyUI();
         UpdateAlphabetUI("");
     }
 
     void OnEnable() {
+        LocalizationSettings.SelectedLocaleChanged += OnLocaleChanged;
+    }
+
+    void OnDisable() {
+        LocalizationSettings.SelectedLocaleChanged -= OnLocaleChanged;
+        difficultyLocalizedString.StringChanged -= OnDifficultyStringChanged;
+    }
+
+    void OnLocaleChanged(Locale newLocale) {
         UpdateDifficultyUI();
     }
 
     void UpdateDifficultyUI() {
         if (PlayerPrefs.HasKey("isHard")) {
             isHard = PlayerPrefs.GetInt("isHard") == 1;
-            Color newColor;
-            if (isHard) {
-                ColorUtility.TryParseHtmlString("#B9000A", out newColor);
-                difficultyButton.image.color = newColor;
-                difficultyButton.GetComponentInChildren<TextMeshProUGUI>().text = "Difficult: HARD";
-            } else {
-                ColorUtility.TryParseHtmlString("#0EB03E", out newColor);
-                difficultyButton.image.color = newColor;
-                difficultyButton.GetComponentInChildren<TextMeshProUGUI>().text = "Difficult: EASY";
+            string difficultyText = isHard ? "HARD" : "EASY";
+
+            string currentLocale = LocalizationSettings.SelectedLocale.Identifier.Code;
+            if (currentLocale == "pt-BR") {
+                difficultyText = isHard ? "DIFICIL" : "FACIL";
             }
+
+            // Atualiza os argumentos da string localizada
+            difficultyLocalizedString.Arguments = new object[] { difficultyText };
+
+            // Atualiza a string localizada
+            difficultyLocalizedString.RefreshString();
+
+            // Define a cor do botão com base na dificuldade
+            Color newColor = isHard ? new Color(0.73f, 0, 0.04f) : new Color(0.05f, 0.69f, 0.24f);
+            difficultyButton.image.color = newColor;
         }
+    }
+
+    void OnDifficultyStringChanged(string localizedText) {
+        difficultyButton.GetComponentInChildren<TextMeshProUGUI>().text = localizedText;
     }
 
     public void GameOver() {

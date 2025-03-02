@@ -1388,6 +1388,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 605529881}
+  - component: {fileID: 605529882}
   m_Layer: 5
   m_Name: AlphabetGuideCollector
   m_TagString: Untagged
@@ -1416,6 +1417,19 @@ RectTransform:
   m_AnchoredPosition: {x: 135, y: -53}
   m_SizeDelta: {x: 58.769897, y: 358}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &605529882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605529880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99d45c59f468b0449b1f6ed12302e6a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alphabetGuideUI: {fileID: 605529880}
 --- !u!1 &780734504
 GameObject:
   m_ObjectHideFlags: 0
